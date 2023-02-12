@@ -2,6 +2,7 @@ package me.bredo.cmd.server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.SocketException;
 import java.util.HashSet;
 
 /**
@@ -15,6 +16,12 @@ public final class Server {
     private final ClientListeningHandler clientListeningHandler;
     private final HashSet<ServerClientConnection> serverClientMatrix;
     private IOServerHandling ioServerHandling;
+    private boolean reuseAddress;
+    private int receiveBufferSize;
+    private int serverSoTimeout;
+    private int connectionSoTimeout;
+    private boolean noTcpDelay;
+
 
     /**
      * Constructor to create a new instance of the `Server` class.
@@ -28,6 +35,10 @@ public final class Server {
         setAutoStartListening(autoStartListening);
         this.clientListeningHandler = new ClientListeningHandler(this);
         this.serverClientMatrix = new HashSet<>();
+        this.reuseAddress = true;
+        this.receiveBufferSize = 1024;
+        this.serverSoTimeout = -1;
+        this.connectionSoTimeout = -1;
     }
 
     /**
@@ -36,8 +47,19 @@ public final class Server {
     public void initialize() {
         if (debugMode()) print("Initializing Server");
         initializeServerSocket();
-
+        initializeServerSettings();
         if (isAutoStartListening()) getClientListeningHandler().startListening();
+    }
+
+    public void initializeServerSettings() {
+        try {
+            if (getServerSoTimeout() > 0) serverSocket.setSoTimeout(getServerSoTimeout());
+            if (getServerSoTimeout() > 0) serverSocket.setReceiveBufferSize(receiveBufferSize);
+            serverSocket.setReuseAddress(reuseAddress);
+        } catch (final SocketException exception) {
+            warning("Could not set server settings");
+            exception.printStackTrace();
+        }
     }
 
     /**
@@ -176,5 +198,45 @@ public final class Server {
 
     public void setAutoStartListening(final boolean autoStartListening) {
         this.autoStartListening = autoStartListening;
+    }
+
+    public boolean isReuseAddress() {
+        return reuseAddress;
+    }
+
+    public void setReuseAddress(final boolean reuseAddress) {
+        this.reuseAddress = reuseAddress;
+    }
+
+    public int getReceiveBufferSize() {
+        return receiveBufferSize;
+    }
+
+    public void setReceiveBufferSize(final int receiveBufferSize) {
+        this.receiveBufferSize = receiveBufferSize;
+    }
+
+    public int getServerSoTimeout() {
+        return serverSoTimeout;
+    }
+
+    public void setServerSoTimeout(final int serverSoTimeout) {
+        this.serverSoTimeout = serverSoTimeout;
+    }
+
+    public int getConnectionSoTimeout() {
+        return connectionSoTimeout;
+    }
+
+    public void setConnectionSoTimeout(final int connectionSoTimeout) {
+        this.connectionSoTimeout = connectionSoTimeout;
+    }
+
+    public boolean isNoTcpDelay() {
+        return noTcpDelay;
+    }
+
+    public void setNoTcpDelay(final boolean noTcpDelay) {
+        this.noTcpDelay = noTcpDelay;
     }
 }

@@ -2,6 +2,7 @@ package me.bredo.cmd.server;
 
 import java.io.IOException;
 import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * ClientListeningHandler is a class in the package `me.bredo.cmd.server` responsible for
@@ -55,9 +56,20 @@ public final class ClientListeningHandler {
             if (getServer().debugMode()) getServer().print("Listening for new client socket connection...");
             final Socket socket = listeningForSocket();
             if (getServer().debugMode()) getServer().print("Connection from client '" + socket.getInetAddress() + "'");
+            setSocketSettings(socket);
             final ServerClientConnection serverClientConnection = new ServerClientConnection(getServer(), socket);
             getServer().getServerClientMatrix().add(serverClientConnection);
             serverClientConnection.startConnection();
+        }
+    }
+
+    private void setSocketSettings(final Socket socket) {
+        try {
+            socket.setTcpNoDelay(getServer().isNoTcpDelay());
+            if (getServer().getConnectionSoTimeout() > 0) socket.setSoTimeout(getServer().getConnectionSoTimeout());
+        } catch (final SocketException exception) {
+            getServer().warning("Could not set socket settings");
+            exception.printStackTrace();
         }
     }
 
