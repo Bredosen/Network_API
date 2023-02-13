@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="271bc6ad-9f1f-463f-95a4-cd3fe05c72ca" name="Changes" comment="Setting up GitHub">
+    <list default="true" id="271bc6ad-9f1f-463f-95a4-cd3fe05c72ca" name="Changes" comment="Just made a few changes, I think I will make some more documentation for the API, it looks pretty good so far.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/ClientListeningHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/ClientListeningHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/client/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/client/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/ServerClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/ServerClientConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,12 +278,20 @@
       <option name="project" value="LOCAL" />
       <updated>1675615911020</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Just made a few changes, I think I will make some more documentation for the API, it looks pretty good so far.">
+      <created>1676222438886</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676222438886</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setting up GitHub" />
-    <option name="LAST_COMMIT_MESSAGE" value="Setting up GitHub" />
+    <MESSAGE value="Just made a few changes, I think I will make some more documentation for the API, it looks pretty good so far." />
+    <option name="LAST_COMMIT_MESSAGE" value="Just made a few changes, I think I will make some more documentation for the API, it looks pretty good so far." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

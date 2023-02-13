@@ -45,6 +45,8 @@ public final class ServerClientConnection {
                     inputStream(dataInputStream);
                     outputStream(dataOutputStream);
                 } catch (final IOException exception) {
+                    getServer().warning("Lost connection to server");
+                    exception.printStackTrace();
                     stopConnection();
                 }
             }
