@@ -1,4 +1,4 @@
-package me.bredo.cmd.client;
+package me.bredo.network.client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

@@ -1,4 +1,4 @@
-package me.bredo.cmd.server;
+package me.bredo.network.server;
 
 import java.io.IOException;
 import java.net.Socket;

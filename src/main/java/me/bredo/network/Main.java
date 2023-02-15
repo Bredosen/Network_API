@@ -1,11 +1,11 @@
-package me.bredo.cmd;
+package me.bredo.network;
 
-import me.bredo.cmd.client.Client;
-import me.bredo.cmd.client.ClientConnection;
-import me.bredo.cmd.client.IOClientHandling;
-import me.bredo.cmd.server.IOServerHandling;
-import me.bredo.cmd.server.Server;
-import me.bredo.cmd.server.ServerClientConnection;
+import me.bredo.network.client.Client;
+import me.bredo.network.client.ClientConnection;
+import me.bredo.network.client.IOClientHandling;
+import me.bredo.network.server.IOServerHandling;
+import me.bredo.network.server.Server;
+import me.bredo.network.server.ServerClientConnection;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

@@ -9,11 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="271bc6ad-9f1f-463f-95a4-cd3fe05c72ca" name="Changes" comment="Just made a few changes, I think I will make some more documentation for the API, it looks pretty good so far.">
+    <list default="true" id="271bc6ad-9f1f-463f-95a4-cd3fe05c72ca" name="Changes" comment="Fix some bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/client/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/client/ClientConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/ServerClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/bredo/cmd/server/ServerClientConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +99,7 @@
       <recent name="me.bredo.cmd.server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Gradle.Network_API [jar]">
     <configuration name="Client" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="me.bredo.cmd.Main" />
       <module name="Network_API.main" />
@@ -285,13 +282,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676222438886</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix some bugs">
+      <created>1676322167309</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676322167309</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Setting up GitHub" />
     <MESSAGE value="Just made a few changes, I think I will make some more documentation for the API, it looks pretty good so far." />
-    <option name="LAST_COMMIT_MESSAGE" value="Just made a few changes, I think I will make some more documentation for the API, it looks pretty good so far." />
+    <MESSAGE value="Fix some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix some bugs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
