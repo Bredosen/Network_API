@@ -11,34 +11,29 @@ import java.net.Socket;
 public final class Client {
 
     /**
+     * Object for managing the connection between the client and the server
+     */
+    private final    ClientConnection clientConnection;
+    /**
      * IP address of the server to connect to
      */
-    private String ip;
-
+    private          String           ip;
     /**
      * Port number of the server to connect to
      */
-    private int port;
-
+    private          int              port;
     /**
      * Flag indicating whether to print debug messages
      */
-    private boolean debugMode;
-
+    private          boolean          debugMode;
     /**
      * `Socket` object for communication with the server
      */
-    private Socket socket;
-
+    private          Socket           socket;
     /**
      * Object for handling input/output for the client
      */
-    private IOClientHandling ioClientHandling;
-
-    /**
-     * Object for managing the connection between the client and the server
-     */
-    private final ClientConnection clientConnection;
+    private volatile IOClientHandling ioClientHandling;
 
     /**
      * Constructor for `Client`

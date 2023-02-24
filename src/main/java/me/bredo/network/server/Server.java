@@ -9,18 +9,18 @@ import java.util.HashSet;
  * The `Server` class represents a simple server that can handle incoming client connections.
  */
 public final class Server {
-    private int port;
-    private boolean debugMode;
-    private boolean autoStartListening;
-    private ServerSocket serverSocket;
-    private final ClientListeningHandler clientListeningHandler;
-    private final HashSet<ServerClientConnection> serverClientMatrix;
-    private IOServerHandling ioServerHandling;
-    private boolean reuseAddress;
-    private int receiveBufferSize;
-    private int serverSoTimeout;
-    private int connectionSoTimeout;
-    private boolean noTcpDelay;
+    private final    ClientListeningHandler          clientListeningHandler;
+    private final    HashSet<ServerClientConnection> serverClientMatrix;
+    private          int                             port;
+    private          boolean                         debugMode;
+    private          boolean                         autoStartListening;
+    private          ServerSocket                    serverSocket;
+    private volatile IOServerHandling                ioServerHandling;
+    private          boolean                         reuseAddress;
+    private          int                             receiveBufferSize;
+    private          int                             serverSoTimeout;
+    private          int                             connectionSoTimeout;
+    private          boolean                         noTcpDelay;
 
 
     /**
@@ -34,11 +34,11 @@ public final class Server {
         setDebugMode(debugMode);
         setAutoStartListening(autoStartListening);
         this.clientListeningHandler = new ClientListeningHandler(this);
-        this.serverClientMatrix = new HashSet<>();
-        this.reuseAddress = true;
-        this.receiveBufferSize = 1024;
-        this.serverSoTimeout = -1;
-        this.connectionSoTimeout = -1;
+        this.serverClientMatrix     = new HashSet<>();
+        this.reuseAddress           = true;
+        this.receiveBufferSize      = 1024;
+        this.serverSoTimeout        = -1;
+        this.connectionSoTimeout    = -1;
     }
 
     /**
